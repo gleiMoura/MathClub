@@ -1,0 +1,132 @@
+/* Estilos copiados do index.css original */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Usei uma fonte padrão, já que 'Poppins' pode não estar disponível */
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #0a1423;
+    color: #aee7ff;
+    /* Removi a imagem de fundo 'background.png' que eu não tenho acesso */
+    /* background: url('background.png') no-repeat center center fixed; */
+    background-size: cover;
+    color: #aee7ff;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background-color: #0a1423;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 200px;
+    /* Adicionando um placeholder para a logo que não tenho */
+    content: 'Math Club Logo';
+    color: #7ed9ff;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+nav {
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #7ed9ff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #b9ecff;
+}
+
+/* Estilos da página antiga (removidos da visualização, mas mantidos para referência) */
+.title {
+    /* ... estilos da seção .title ... */
+}
+
+.search-bar {
+    /* ... estilos da .search-bar ... */
+}
+
+.main-title {
+    /* ... estilos do .main-title ... */
+}
+
+.subtitle {
+    /* ... estilos do .subtitle ... */
+}
+
+/* Media query original para o header */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* --- NOVOS ESTILOS PARA OS RETÂNGULOS --- */
+
+.content-container {
+    /* Centraliza os itens e adiciona espaçamento */
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que os itens quebrem a linha */
+    justify-content: center;
+    gap: 20px;
+    /* Espaço entre os retângulos */
+    padding: 40px 50px;
+    /* Alinha com o padding do header */
+}
+
+.content-box {
+    background-color: #0a1423;
+    /* Mesmo fundo do header */
+    border: 2px solid #7ed9ff;
+    /* Borda no estilo do site */
+    border-radius: 15px;
+    /* Bordas arredondadas */
+    height: 250px;
+    /* Altura de exemplo para os retângulos */
+    padding: 20px;
+
+    /* Centraliza o texto de exemplo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    /* Mobile-first: ocupa a tela inteira por padrão */
+    width: 100%;
+}
+
+/* Desktop: media query para telas maiores que 768px */
+@media (min-width: 769px) {
+    .content-box {
+        /* Ocupa metade da tela (menos o espaço do 'gap') */
+        width: calc(50% - 10px);
+    }
+}
+
