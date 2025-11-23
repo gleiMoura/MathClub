@@ -15,6 +15,9 @@ const tituloFormatado = pastaAtual
     .replace(/-|_/g, ' ')
     .replace(/\b\w/g, l => l.toUpperCase());
 
+console.log(`Carregando apresentação para a pasta: ${pastaAtual}`);
+// Atualiza o título da página
+
 document.getElementById('titulo-topico').innerText = tituloFormatado;
 
 // Variáveis de controle
@@ -25,7 +28,7 @@ const imgElement = document.getElementById('slide-img');
 function carregarSlide(numero) {
     // === MUDANÇA PRINCIPAL AQUI ===
     // Caminho absoluto partindo da raiz: /conteudos_page/nome-da-pasta/numero.png
-    const caminho = `/conteudos_page/${pastaAtual}/${numero}.png`;
+    const caminho = `/conteudos_page/images/${pastaAtual}/${numero}.png`;
 
     console.log(`Tentando carregar: ${caminho}`); // Log para ajudar no debug
     imgElement.src = caminho;
