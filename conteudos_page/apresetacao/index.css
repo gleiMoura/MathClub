@@ -1,0 +1,158 @@
+/* === ESTILOS FORNECIDOS E ADAPTADOS === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0a1423;
+    color: #aee7ff;
+    /* Nota: Certifique-se que 'background.png' está na pasta correta ou remova a linha abaixo se não tiver a imagem */
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background-color: #0a1423;
+    border-bottom: 2px solid #1c2e4a;
+    /* Adicionei uma borda sutil para separar */
+}
+
+/* Estilo do botão voltar para combinar com o "nav a" do seu design */
+.btn-voltar {
+    text-decoration: none;
+    color: #7ed9ff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    border: 2px solid transparent;
+    padding: 5px 15px;
+    border-radius: 50px;
+}
+
+.btn-voltar:hover {
+    color: #b9ecff;
+    border-color: #7ed9ff;
+    /* Efeito de borda ao passar o mouse */
+    background-color: rgba(126, 217, 255, 0.1);
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #aee7ff;
+    font-weight: 700;
+}
+
+/* === CONTAINER DO SLIDE === */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.slide-container {
+    background-color: #0f1c2e;
+    /* Fundo escuro levemente diferente do body */
+    width: 100%;
+    max-width: 1000px;
+    aspect-ratio: 16 / 9;
+    border-radius: 20px;
+    /* Bordas mais arredondadas conforme o estilo */
+    box-shadow: 0 0 20px rgba(126, 217, 255, 0.15);
+    /* Brilho azul suave */
+    border: 3px solid #7ed9ff;
+    /* Borda azul neon igual à da .search-bar */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* A imagem do slide */
+#slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* === BOTÕES DE NAVEGAÇÃO === */
+.btn-nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    background: transparent;
+    border: none;
+    color: #7ed9ff;
+    /* Cor azul neon */
+    font-size: 3rem;
+    user-select: none;
+    opacity: 0.5;
+}
+
+.btn-nav:hover {
+    opacity: 1;
+    background: rgba(10, 20, 35, 0.3);
+    /* Fundo escuro sutil ao passar o mouse */
+    text-shadow: 0 0 10px #7ed9ff;
+    /* Brilho no texto */
+}
+
+.btn-next {
+    right: 0;
+    width: 50%;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+.btn-prev {
+    left: 0;
+    width: 20%;
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
+/* Mensagem de Carregando/Erro */
+.status-msg {
+    position: absolute;
+    color: #7ed9ff;
+    font-style: italic;
+    text-align: center;
+    z-index: -1;
+}
+
+/* Responsividade básica do header */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 20px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação - Math Club</title>
+    <link rel="stylesheet" href="../apresetacao/index.css">
+</head>
+
+<body>
+    <header>
+        <a href="../geometria.html" class="btn-voltar">
+            <span>&#8592;</span> Voltar
+        </a>
+        <h1 id="titulo-topico">Apresentação</h1>
+    </header>
+
+    <main>
+        <div class="slide-container">
+            <div class="status-msg">Carregando slide...</div>
+
+            <!-- Imagem Principal -->
+            <!-- O src começa vazio e é preenchido pelo script -->
+            <img id="slide-img" src="" alt="Slide da apresentação">
+
+            <!-- Áreas de clique -->
+            <button class="btn-nav btn-prev" onclick="mudarSlide(-1)">&#10094;</button>
+            <button class="btn-nav btn-next" onclick="mudarSlide(1)">&#10095;</button>
+        </div>
+    </main>
+    <script src="../apresetacao/script.js"></script>
+</body>
+
+</html>
