@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Club - Calculadora Renda Fixa</title>
+    <link rel="stylesheet" href="/financeiro_page/calculadora_rendafixa/index.css">
+</head>
+
+<body>
+    <header>
+        <a href="/index.html">
+            <div class="logo">
+                <img src="/images/logo.png" alt="Math Club Logo" onerror="this.src='https://placehold.co/200x50/0a1423/7ed9ff?text=Math+Club'">
+            </div>
+        </a>
+        <nav>
+            <a href="#">Apresentações</a>
+            <a href="/financeiro.html">Matemática Financeira</a>
+        </nav>
+    </header>
+
+    <h1 class="page-title">Calculadora de Renda Fixa</h1>
+
+    <main class="main-container">
+        
+        <!-- Área de Explicação -->
+        <section class="info-card">
+            <h2>Investindo a Longo Prazo</h2>
+            <p>
+                A Renda Fixa é um tipo de investimento onde as regras de rendimento são definidas no momento da aplicação. 
+                Nesta calculadora, você pode simular quanto seu dinheiro renderia fazendo aportes mensais constantes, 
+                aproveitando o efeito dos juros compostos em diferentes modalidades como Tesouro Selic, CDB e LCI.
+            </p>
+        </section>
+
+        <!-- Calculadora -->
+        <section class="calculator-box">
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="investimentoInicial">Investimento Inicial (R$)</label>
+                    <input type="number" id="investimentoInicial" placeholder="Ex: 5000.00" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="aporteMensal">Aporte Mensal (R$)</label>
+                    <input type="number" id="aporteMensal" placeholder="Ex: 500.00" step="0.01">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="periodo">Período (Meses)</label>
+                    <input type="number" id="periodo" placeholder="Ex: 24">
+                </div>
+                <div class="form-group">
+                    <label for="tipoInvestimento">Tipo de Investimento</label>
+                    <select id="tipoInvestimento" onchange="verificarTipoPersonalizado()">
+                        <option value="selic">Tesouro Selic</option>
+                        <option value="cdb">CDB</option>
+                        <option value="lci">LCI / LCA</option>
+                        <option value="poupanca">Poupança</option>
+                        <option value="personalizado">Personalizado (Outra taxa)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Campo Condicional para Taxa Personalizada -->
+            <div class="form-group hidden" id="divTaxaPersonalizada">
+                <label for="taxaAnualPersonalizada">Taxa Anual Personalizada (%)</label>
+                <input type="number" id="taxaAnualPersonalizada" placeholder="Ex: 12.5" step="0.01">
+            </div>
+
+            <button class="calc-btn" onclick="calcularInvestimento()">Simular Rendimento</button>
+
+            <!-- Área de Resultado -->
+            <div id="resultArea" class="result-section">
+                <h3 class="result-title">Projeção do Investimento</h3>
+                
+                <div class="result-grid">
+                    <div class="result-item">
+                        <span>Total Investido (Principal)</span>
+                        <span class="result-value" id="resTotalInvestido">R$ 0,00</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Total em Rendimentos</span>
+                        <span class="result-value" id="resRendimentos" style="color: #7ed9ff;">R$ 0,00</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Taxa Mensal Efetiva</span>
+                        <span class="result-value" id="resTaxaMensal">0%</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Taxa Anual Considerada</span>
+                        <span class="result-value" id="resTaxaAnual">0%</span>
+                    </div>
+                    
+                    <div class="result-item highlight-box">
+                        <span>Montante Final Bruto</span>
+                        <span class="result-value" id="resMontanteFinal">R$ 0,00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <a href="/financeiro_page/financeiros.html" class="back-link">← Voltar para Financeiro</a>
+    </main>
+    <script src="/financeiro_page/calculadora_rendafixa/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Club - Financeiro</title>
+    <link rel="stylesheet" href="/financeiro_page/index.css">
+</head>
+
+<body>
+    <header>
+        <a href="/index.html">
+            <div class="logo">
+                <img src="/images/logo.png" alt="Math Club Logo"
+                    onerror="this.src='https://placehold.co/200x50/0a1423/7ed9ff?text=Math+Club'">
+            </div>
+        </a>
+        <nav>
+            <a href="/conteudos_page/conteudos.html">Conhecimentos Matemáticos</a>
+            <a href="/financeiro_page/financeiros.html">Matemática Financeira</a>
+        </nav>
+    </header>
+
+    <h1 class="page-title">Conteúdos de Matemática Financeira</h1>
+
+    <main class="content-container">
+        <!-- SEÇÃO DO VÍDEO -->
+        <div class="video-section">
+            <div class="section-subtitle" id="tituloVideo">Introdução: Juros Simples</div>
+
+            <div class="video-wrapper">
+                <!-- O ID 'meuVideo' é usado pelo Javascript para trocar o conteúdo -->
+                <video id="meuVideo" poster="/financeiro_page/files/1.png" controls>
+                    <source src="/financeiro_page/files/video.mp4" type="video/mp4">
+                    Seu navegador não suporta a reprodução de vídeos.
+                </video>
+            </div>
+
+            <!-- Botões para Trocar de Vídeo -->
+            <div class="video-controls">
+                <button class="video-btn"
+                    onclick="trocarVideo('Introdução: Juros Simples', '/financeiro_page/files/video.mp4', '/financeiro_page/files/1.png')">
+                    Vídeo 1: Juros Simples
+                </button>
+                <button class="video-btn"
+                    onclick="trocarVideo('Aprofundando: Juros Compostos', '/financeiro_page/files/video2.mp4', '/financeiro_page/files/2.png')">
+                    Vídeo 2: Juros Compostos
+                </button>
+            </div>
+        </div>
+
+        <div class="section-subtitle">Ferramentas de Cálculo</div>
+        <div class="calculators-nav">
+            <a href="./calculadora_simples/index.html" class="calc-btn">Juros Simples</a>
+            <a href="./calculadora_composto/index.html" class="calc-btn">Juros Compostos</a>
+            <a href="./calculadora_rendafixa/index.html" class="calc-btn">Renda Fixa</a>
+        </div>
+
+        <div class="section-subtitle">Artigos dos Alunos: OLITEF</div>
+        <div class="articles-grid">
+            <a href="/financeiro_page/olitef_page/index.html" class="content-box olitef-artigo-1">
+                <h3>O que é a OLITEF?</h3>
+                <p>Relato sobre a olimpíada.</p>
+            </a>
+            <a href="/financeiro_page/olitef_page_two/index.html" class="content-box olitef-artigo-2">
+                <h3>OLITEF na prática</h3>
+                <p>Como foi a preparação para a prova?</p>
+            </a>
+        </div>
+    </main>
+
+    <!-- SCRIPT PARA TROCAR O VÍDEO -->
+    <script>
+        function trocarVideo(titulo, caminhoVideo, caminhoPoster) {
+            // Pega o elemento de vídeo e o título
+            const player = document.getElementById('meuVideo');
+            const labelTitulo = document.getElementById('tituloVideo');
+
+            // Atualiza o título
+            labelTitulo.innerText = titulo;
+
+            // Atualiza a capa (poster) se fornecida
+            if (caminhoPoster) {
+                player.poster = caminhoPoster;
+            }
+
+            // Atualiza o src do vídeo e recarrega
+            player.src = caminhoVideo;
+            player.load();
+            player.play(); // Tenta iniciar automaticamente
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Club - Calculadora Juros Compostos</title>
+    <link rel="stylesheet" href="/financeiro_page/calculadora_composto/index.css">
+</head>
+
+<body>
+    <header>
+        <a href="/index.html">
+            <div class="logo">
+                <img src="/images/logo.png" alt="Math Club Logo"
+                    onerror="this.src='https://placehold.co/200x50/0a1423/7ed9ff?text=Math+Club'">
+            </div>
+        </a>
+        <nav>
+            <a href="#">Apresentações</a>
+            <a href="/financeiro.html">Matemática Financeira</a>
+        </nav>
+    </header>
+
+    <h1 class="page-title">Calculadora de Juros Compostos</h1>
+
+    <main class="main-container">
+
+        <!-- Área de Explicação Teórica -->
+        <section class="info-card">
+            <h2>O que são Juros Compostos?</h2>
+            <p>
+                Conhecidos como "juros sobre juros", os juros compostos são calculados sobre o montante acumulado do
+                período anterior, e não apenas sobre o capital inicial. Isso faz com que o valor cresça de forma
+                exponencial ao longo do tempo. É o modelo mais usado no mercado financeiro.
+                <br><br>
+                <strong>Fórmula usada:</strong> <em>M = C × (1 + i)<sup>t</sup></em> <br>
+                Onde <strong>M</strong> é o montante final, <strong>C</strong> é o capital, <strong>i</strong> é a taxa
+                e <strong>t</strong> é o tempo.
+            </p>
+        </section>
+
+        <!-- Calculadora -->
+        <section class="calculator-box">
+            <div class="form-group">
+                <label for="capital">Quanto você vai investir? (Capital - R$)</label>
+                <input type="number" id="capital" placeholder="Ex: 1000.00" step="0.01">
+            </div>
+
+            <div class="form-group">
+                <label for="taxa">Qual a taxa de juros? (% ao mês)</label>
+                <input type="number" id="taxa" placeholder="Ex: 1.5" step="0.01">
+            </div>
+
+            <div class="form-group">
+                <label for="tempo">Por quanto tempo? (Meses)</label>
+                <input type="number" id="tempo" placeholder="Ex: 12">
+            </div>
+
+            <button class="calc-btn" onclick="calcularJurosCompostos()">Calcular Rendimento</button>
+
+            <!-- Área de Resultado (Inicialmente oculta) -->
+            <div id="resultArea" class="result-section">
+                <h3 class="result-title">Resultado da Simulação</h3>
+
+                <div class="result-item">
+                    <span>Capital Investido:</span>
+                    <span class="result-value" id="resCapital">R$ 0,00</span>
+                </div>
+                <div class="result-item">
+                    <span>Taxa de Juros:</span>
+                    <span class="result-value" id="resTaxa">0% a.m.</span>
+                </div>
+                <div class="result-item">
+                    <span>Período:</span>
+                    <span class="result-value" id="resTempo">0 meses</span>
+                </div>
+                <div class="result-item">
+                    <span>Juros Acumulados:</span>
+                    <span class="result-value highlight" id="resJuros">R$ 0,00</span>
+                </div>
+                <div class="result-item" style="border-top: 1px solid #7ed9ff; margin-top: 10px; padding-top: 15px;">
+                    <span style="font-size: 1.2rem; color: #b9ecff;">Montante Total:</span>
+                    <span class="result-value highlight" id="resTotal">R$ 0,00</span>
+                </div>
+            </div>
+        </section>
+
+        <a href="/financeiro_page/financeiros.html" class="back-link">← Voltar para Financeiro</a>
+    </main>
+
+    <script src="/financeiro_page/calculadora_composto/script.js"></script>
+</body>
+
+</html>

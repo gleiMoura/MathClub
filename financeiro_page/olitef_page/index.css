@@ -1,0 +1,196 @@
+/* --- ESTILOS GERAIS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #0a1423;
+    color: #aee7ff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* --- HEADER (Padrão do site) --- */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background-color: #0a1423;
+    border-bottom: 1px solid #1c2e4a;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    color: #7ed9ff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #b9ecff;
+    text-shadow: 0 0 10px rgba(126, 217, 255, 0.5);
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.page-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #7ed9ff;
+    margin-bottom: 50px;
+    text-shadow: 0 0 15px rgba(126, 217, 255, 0.3);
+}
+
+/* --- ESTILO "MURAL DE ESTUDANTES" --- */
+.students-wall {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+}
+
+/* O estilo do "Papel" */
+.note-card {
+    background-color: #fdf6e3;
+    /* Cor de papel amarelado */
+    color: #2c3e50;
+    /* Cor de caneta azul escuro/preto */
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    transform: rotate(-1deg);
+    transition: transform 0.3s ease;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Variação de rotação para parecer natural */
+.note-card:nth-child(even) {
+    transform: rotate(1deg);
+    background-color: #fff;
+    /* Papel branco */
+}
+
+.note-card:hover {
+    transform: scale(1.02) rotate(0deg);
+    z-index: 10;
+}
+
+/* "Tape" ou "Clip" visual no topo do papel */
+.note-card::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+}
+
+/* APLICANDO A FONTE DE ALUNO */
+.handwritten {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+.student-name {
+    font-family: 'Patrick Hand', cursive;
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #d35400;
+    /* Cor de destaque para o nome */
+    margin-bottom: 10px;
+    display: block;
+    border-bottom: 2px dashed #bdc3c7;
+    padding-bottom: 5px;
+}
+
+.olitef-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-family: 'Patrick Hand', cursive;
+    font-weight: bold;
+    color: #2980b9;
+    text-decoration: underline;
+    font-size: 1.4rem;
+}
+
+.olitef-link:hover {
+    color: #3498db;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 60px;
+    color: #7ed9ff;
+    border: 1px solid #7ed9ff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-family: Arial, sans-serif;
+    /* Botão volta a ser Arial para consistência de UI */
+}
+
+.back-link:hover {
+    background-color: rgba(126, 217, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .note-card {
+        width: 100%;
+        transform: none !important;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+}

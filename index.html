@@ -1,29 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Math Club</title>
-  <link rel="stylesheet" href="index.css">
+  <title>Math Club - Início</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/index.css">
 </head>
+
 <body>
 
   <header>
-    <div class="logo">
-      <img src="images/logo.png" alt="Math Club Logo">
-    </div>
+    <a href="/index.html">
+      <div class="logo">
+        <img src="/images/logo.png" alt="Math Club Logo"
+          onerror="this.src='https://placehold.co/200x50/0a1423/7ed9ff?text=Math+Club'">
+      </div>
+    </a>
     <nav>
-      <a href="conteudos_page/geometria.html">Geometria</a>
-      <a href="#">Álgebra</a>
-      <a href="#">Programação</a>
-      <a href="#">Financeiro</a>
-   </header>
-</nav>
-   
-   <section class="title">
-      <div class="main-title">Conteúdos de Matemática</div>
-      <div class="subtitle">Fáceis e Rápidas</div>
+      <a href="/conteudos_page/conteudos.html">Conhecimentos Matemáticos</a>
+      <a href="/financeiro_page/financeiros.html">Matemática Financeira</a>
+    </nav>
+  </header>
+
+  <!-- Banner Principal -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="main-title">Bem-vindo ao Math Club</h1>
+      <div class="subtitle">
+        Explorando conhecimentos em Matemática, Programação e Finanças
+      </div>
+    </div>
   </section>
 
+  <!-- Cards de Conteúdo -->
+  <section class="features-container">
+    <h2 class="section-header">Nossas Áreas de Estudo</h2>
+
+    <div class="cards-grid">
+
+      <!-- Card 1: Matemática -->
+      <div class="feature-card">
+        <div class="icon-circle">∫dx</div>
+        <h3 class="card-title">Matemática</h3>
+        <p class="card-text">
+          Aprofunde-se em conceitos matemáticos, resoluções de problemas olímpicos e lógica avançada.
+        </p>
+        <a href="/conteudos_page/conteudos.html" class="card-btn">Ver Apresentações</a>
+      </div>
+
+      <!-- Card 2: Finanças -->
+      <div class="feature-card">
+        <div class="icon-circle">$</div>
+        <h3 class="card-title">Financeiro</h3>
+        <p class="card-text">
+          Aprenda sobre juros simples, compostos, renda fixa e preparação para a OLITEF.
+        </p>
+        <a href="/financeiro_page/financeiros.html" class="card-btn">Acessar Calculadoras</a>
+      </div>
+
+      <!-- Card 3: Programação -->
+      <div class="feature-card">
+        <div class="icon-circle">&lt;/&gt;</div>
+        <h3 class="card-title">Programação</h3>
+        <p class="card-text">
+          Desenvolvimento de sites, lógica computacional e ferramentas para auxiliar nos estudos.
+        </p>
+        <a href="#" class="card-btn">Em Breve</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Math Club. Desenvolvido pelos alunos.</p>
+  </footer>
+
 </body>
+
 </html>

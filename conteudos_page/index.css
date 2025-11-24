@@ -52,6 +52,10 @@ nav a:hover {
     color: #b9ecff;
 }
 
+a{
+    text-decoration: none;
+}
+
 /* Media query original para o header */
 @media (max-width: 768px) {
     header {
